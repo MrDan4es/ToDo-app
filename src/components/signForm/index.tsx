@@ -3,15 +3,21 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "index";
 import { Button, Input } from "components/UI";
 
-const Login = () => {
+interface Props {
+  isLogin: boolean;
+}
+
+const SignForm: React.FC<Props> = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const { authStore } = useContext(AuthContext);
 
-  const handleRegisterClick = async () => {
+  const handleClick = async () => {
     setSubmitting(true);
-    await authStore.login(email, password, (e: any) => console.log(e));
+    if (props.isLogin)
+      await authStore.login(email, password, (e: any) => console.log(e));
+    else await authStore.register(email, password, (e: any) => console.log(e));
     setSubmitting(false);
   };
 
@@ -30,12 +36,12 @@ const Login = () => {
       <Button
         className="!bg-todoOrange"
         disabled={!email || !password || submitting}
-        onClick={handleRegisterClick}
+        onClick={handleClick}
       >
-        Войти
+        {props.isLogin ? "Войти" : "Зарегистрироваться"}
       </Button>
     </div>
   );
 };
 
-export default Login;
+export default SignForm;

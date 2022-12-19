@@ -1,11 +1,10 @@
+import { observer } from "mobx-react-lite";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { observer } from "mobx-react-lite";
 
-import Login from "components/forms/login";
-import Register from "components/forms/register";
-import { Button } from "components/UI";
+import SignForm from "components/signForm";
 import { AuthContext } from "index";
+import { Button } from "components/UI";
 
 const IndexPage = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -25,7 +24,7 @@ const IndexPage = () => {
         <div className="text-center text-white text-2xl">
           {isLoginForm ? "Войти" : "Зарегистрироваться"}
         </div>
-        {isLoginForm ? <Login /> : <Register />}
+        {<SignForm isLogin={isLoginForm} />}
         <Button onClick={() => setIsLoginForm(!isLoginForm)}>
           {isLoginForm
             ? "Нет аккаунта? Зарегистрируйтесь"
