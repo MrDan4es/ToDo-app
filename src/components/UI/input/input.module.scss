@@ -1,0 +1,11 @@
+.input {
+  @apply w-full h-10 bg-[#00000050] border border-gray-300 rounded-md px-2 text-white;
+
+  &:hover {
+    @apply bg-[#FFFFFF10];
+  }
+
+  &:focus {
+    @apply bg-[#FFFFFF10];
+  }
+}

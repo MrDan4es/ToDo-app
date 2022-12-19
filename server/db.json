@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "email": "mrdan4es@gmail.com",
+      "password": "$2a$10$pVWYkbeF95hySbxNyFZTM.tVLrwqDsKX2u1I6E88w.uyiKoQgAmgS",
+      "id": 1
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "title": "First todo!",
+      "timestamp": "1671448595",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Second todo!",
+      "timestamp": "1671448700",
+      "completed": true
+    }
+  ]
+}
