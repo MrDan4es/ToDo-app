@@ -11,9 +11,7 @@ export default class AuthService {
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then(response => response.json())
-      .then(user => user);
+    }).then(res => res.json());
   }
 
   static async register(email: string, password: string) {
@@ -26,8 +24,6 @@ export default class AuthService {
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then(response => response.json())
-      .then(user => user);
+    }).then(res => res.json());
   }
 }

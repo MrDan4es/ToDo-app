@@ -5,11 +5,11 @@ module.exports = {
     fontFamily: {},
     extend: {
       colors: {
-        todoLight: "#eae2b7",
+        todoLight: "#ccc5b9",
         todoYellow: "#fcbf49",
-        todoOrange: "#f77f00",
+        todoBlue: "#00a8e8",
         todoRed: "#d62828",
-        todoDark: "#003049",
+        todoDark: "#252422",
       },
     },
   },

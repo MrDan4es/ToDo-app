@@ -1,8 +1,8 @@
-import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
+import { createContext } from "react";
 
-import Routing from "routing/Routing";
 import AuthStore from "store/auth.store";
+import Routing from "routing/Routing";
 
 import "global.scss";
 

@@ -1,8 +1,10 @@
 import { makeAutoObservable } from "mobx";
 
 import AuthService from "services/auth.service";
+import { parseJwt } from "utils/parseJWT";
 
 export default class AuthStore {
+  isInit = false;
   isAuth = false;
   email = "";
   userID = 0;
@@ -13,6 +15,10 @@ export default class AuthStore {
 
   setAuth(bool: boolean) {
     this.isAuth = bool;
+  }
+
+  setInit(bool: boolean) {
+    this.isInit = bool;
   }
 
   setEmail(email: string) {
@@ -28,6 +34,16 @@ export default class AuthStore {
     this.setEmail(email);
     this.setAuth(true);
     this.setUserID(id);
+  }
+
+  initialize() {
+    const token = localStorage.getItem("accessToken");
+    if (!token) return this.setInit(true);
+    const data = parseJwt(token);
+    this.setUserID(+data.sub);
+    this.setEmail(data.email);
+    this.setAuth(true);
+    this.setInit(true);
   }
 
   async login(email: string, password: string, errorFunction: Function) {

@@ -2,17 +2,17 @@ import { observer } from "mobx-react-lite";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import SignForm from "components/signForm";
+import SignForm from "components/SignForm";
 import { AuthContext } from "index";
 import { Button } from "components/UI";
 
 const IndexPage = () => {
-  const [isLoginForm, setIsLoginForm] = useState(true);
   const navigate = useNavigate();
+  const [isLoginForm, setIsLoginForm] = useState(true);
   const { authStore } = useContext(AuthContext);
 
   useEffect(() => {
-    if (localStorage.getItem("accessToken")) {
+    if (authStore.isAuth) {
       navigate("/todo", { replace: true });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

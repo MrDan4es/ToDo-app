@@ -4,20 +4,22 @@
       "email": "mrdan4es@gmail.com",
       "password": "$2a$10$pVWYkbeF95hySbxNyFZTM.tVLrwqDsKX2u1I6E88w.uyiKoQgAmgS",
       "id": 1
-    }
-  ],
-  "todos": [
-    {
-      "id": 1,
-      "title": "First todo!",
-      "timestamp": "1671448595",
-      "completed": false
     },
     {
-      "id": 2,
-      "title": "Second todo!",
-      "timestamp": "1671448700",
-      "completed": true
+      "email": "test@test.test",
+      "password": "$2a$10$jGKjmxgs9.bcFgSpefwAF.jqqgn8qZAT1Yk4JjrHs42zlJNHMW6Xy",
+      "id": 2
+    },
+    {
+      "email": "test2@test.test",
+      "password": "$2a$10$uRqAMZnV6MuiJHkhHX99M.kohpp3gqTDd2CURqX0rS3Ro4mcSksSS",
+      "id": 3
+    },
+    {
+      "email": "test3@test.test",
+      "password": "$2a$10$/2JXuAgOZZUWNDVkMEywruyKPH0trgoilzLm/BZzi7TstFNUcbHz.",
+      "id": 4
     }
-  ]
+  ],
+  "todos": []
 }

@@ -34,7 +34,7 @@ const SignForm: React.FC<Props> = props => {
         type="password"
       ></Input>
       <Button
-        className="!bg-todoOrange"
+        variant="blue"
         disabled={!email || !password || submitting}
         onClick={handleClick}
       >
